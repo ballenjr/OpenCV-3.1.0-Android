@@ -92,7 +92,7 @@ class StaticHelper {
         else
         {
             // If dependencies list is not defined or empty.
-            result &= loadLibrary("OpenCV");
+            result &= loadLibrary("opencv");
         }
 
         return result;
