@@ -14,6 +14,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jniLibs/'] } }
 }
 
 dependencies {
