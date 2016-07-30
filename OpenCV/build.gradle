@@ -8,12 +8,6 @@ android {
         targetSdkVersion 21
     }
 
-    sourceSets {
-        main {
-            jni.srcDirs = []
-        }
-    }
-    
     buildTypes {
         release {
             minifyEnabled false
