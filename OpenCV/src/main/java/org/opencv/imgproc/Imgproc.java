@@ -965,6 +965,29 @@ public class Imgproc {
 
 
     //
+    // C++:  void Canny(Mat dx, Mat dy, Mat& edges, double threshold1, double threshold2, bool L2gradient = false)
+    //
+
+    //javadoc: Canny(dx, dy, edges, threshold1, threshold2, L2gradient)
+    public static void Canny(Mat dx, Mat dy, Mat edges, double threshold1, double threshold2, boolean L2gradient)
+    {
+        
+        Canny_0(dx.nativeObj, dy.nativeObj, edges.nativeObj, threshold1, threshold2, L2gradient);
+        
+        return;
+    }
+
+    //javadoc: Canny(dx, dy, edges, threshold1, threshold2)
+    public static void Canny(Mat dx, Mat dy, Mat edges, double threshold1, double threshold2)
+    {
+        
+        Canny_1(dx.nativeObj, dy.nativeObj, edges.nativeObj, threshold1, threshold2);
+        
+        return;
+    }
+
+
+    //
     // C++:  void Canny(Mat image, Mat& edges, double threshold1, double threshold2, int apertureSize = 3, bool L2gradient = false)
     //
 
@@ -972,7 +995,7 @@ public class Imgproc {
     public static void Canny(Mat image, Mat edges, double threshold1, double threshold2, int apertureSize, boolean L2gradient)
     {
         
-        Canny_0(image.nativeObj, edges.nativeObj, threshold1, threshold2, apertureSize, L2gradient);
+        Canny_2(image.nativeObj, edges.nativeObj, threshold1, threshold2, apertureSize, L2gradient);
         
         return;
     }
@@ -981,7 +1004,7 @@ public class Imgproc {
     public static void Canny(Mat image, Mat edges, double threshold1, double threshold2)
     {
         
-        Canny_1(image.nativeObj, edges.nativeObj, threshold1, threshold2);
+        Canny_3(image.nativeObj, edges.nativeObj, threshold1, threshold2);
         
         return;
     }
@@ -2945,7 +2968,7 @@ public class Imgproc {
     //javadoc:getTextSize(text, fontFace, fontScale, thickness, baseLine)
     public static Size getTextSize(String text, int fontFace, double fontScale, int thickness, int[] baseLine) {
         if(baseLine != null && baseLine.length != 1)
-            throw new java.lang.IllegalArgumentException("'baseLine' must be 'int[1]' or 'null'.");
+            throw new IllegalArgumentException("'baseLine' must be 'int[1]' or 'null'.");
         Size retVal = new Size(n_getTextSize(text, fontFace, fontScale, thickness, baseLine));
         return retVal;
     }
@@ -3053,9 +3076,13 @@ public class Imgproc {
     // C++:  int rotatedRectangleIntersection(RotatedRect rect1, RotatedRect rect2, Mat& intersectingRegion)
     private static native int rotatedRectangleIntersection_0(double rect1_center_x, double rect1_center_y, double rect1_size_width, double rect1_size_height, double rect1_angle, double rect2_center_x, double rect2_center_y, double rect2_size_width, double rect2_size_height, double rect2_angle, long intersectingRegion_nativeObj);
 
+    // C++:  void Canny(Mat dx, Mat dy, Mat& edges, double threshold1, double threshold2, bool L2gradient = false)
+    private static native void Canny_0(long dx_nativeObj, long dy_nativeObj, long edges_nativeObj, double threshold1, double threshold2, boolean L2gradient);
+    private static native void Canny_1(long dx_nativeObj, long dy_nativeObj, long edges_nativeObj, double threshold1, double threshold2);
+
     // C++:  void Canny(Mat image, Mat& edges, double threshold1, double threshold2, int apertureSize = 3, bool L2gradient = false)
-    private static native void Canny_0(long image_nativeObj, long edges_nativeObj, double threshold1, double threshold2, int apertureSize, boolean L2gradient);
-    private static native void Canny_1(long image_nativeObj, long edges_nativeObj, double threshold1, double threshold2);
+    private static native void Canny_2(long image_nativeObj, long edges_nativeObj, double threshold1, double threshold2, int apertureSize, boolean L2gradient);
+    private static native void Canny_3(long image_nativeObj, long edges_nativeObj, double threshold1, double threshold2);
 
     // C++:  void GaussianBlur(Mat src, Mat& dst, Size ksize, double sigmaX, double sigmaY = 0, int borderType = BORDER_DEFAULT)
     private static native void GaussianBlur_0(long src_nativeObj, long dst_nativeObj, double ksize_width, double ksize_height, double sigmaX, double sigmaY, int borderType);

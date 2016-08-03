@@ -211,6 +211,20 @@ public class TrainData {
 
 
     //
+    // C++:  Mat getTestSamples()
+    //
+
+    //javadoc: TrainData::getTestSamples()
+    public  Mat getTestSamples()
+    {
+        
+        Mat retVal = new Mat(getTestSamples_0(nativeObj));
+        
+        return retVal;
+    }
+
+
+    //
     // C++:  Mat getTrainNormCatResponses()
     //
 
@@ -318,10 +332,10 @@ public class TrainData {
 
 
     //
-    // C++: static Ptr_TrainData create(Mat samples, int layout, Mat responses, Mat varIdx = Mat(), Mat sampleIdx = Mat(), Mat sampleWeights = Mat(), Mat varType = Mat())
+    // C++: static Ptr_ml_TrainData create(Mat samples, int layout, Mat responses, Mat varIdx = Mat(), Mat sampleIdx = Mat(), Mat sampleWeights = Mat(), Mat varType = Mat())
     //
 
-    // Return type 'Ptr_TrainData' is not supported, skipping the function
+    // Return type 'Ptr_ml_TrainData' is not supported, skipping the function
 
 
     //
@@ -572,6 +586,9 @@ public class TrainData {
 
     // C++:  Mat getTestSampleWeights()
     private static native long getTestSampleWeights_0(long nativeObj);
+
+    // C++:  Mat getTestSamples()
+    private static native long getTestSamples_0(long nativeObj);
 
     // C++:  Mat getTrainNormCatResponses()
     private static native long getTrainNormCatResponses_0(long nativeObj);

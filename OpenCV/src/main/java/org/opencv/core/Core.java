@@ -17,12 +17,12 @@ import org.opencv.utils.Converters;
 public class Core {
 
     // these constants are wrapped inside functions to prevent inlining
-    private static String getVersion() { return "3.1.0"; }
+    private static String getVersion() { return "3.1.0-dev"; }
     private static String getNativeLibraryName() { return "opencv_java310"; }
     private static int getVersionMajor() { return 3; }
     private static int getVersionMinor() { return 1; }
     private static int getVersionRevision() { return 0; }
-    private static String getVersionStatus() { return ""; }
+    private static String getVersionStatus() { return "-dev"; }
 
     public static final String VERSION = getVersion();
     public static final String NATIVE_LIBRARY_NAME = getNativeLibraryName();
@@ -1103,6 +1103,20 @@ public class Core {
 
 
     //
+    // C++:  void convertFp16(Mat src, Mat& dst)
+    //
+
+    //javadoc: convertFp16(src, dst)
+    public static void convertFp16(Mat src, Mat dst)
+    {
+        
+        convertFp16_0(src.nativeObj, dst.nativeObj);
+        
+        return;
+    }
+
+
+    //
     // C++:  void convertScaleAbs(Mat src, Mat& dst, double alpha = 1, double beta = 0)
     //
 
@@ -1998,6 +2012,20 @@ public class Core {
 
 
     //
+    // C++:  void setRNGSeed(int seed)
+    //
+
+    //javadoc: setRNGSeed(seed)
+    public static void setRNGSeed(int seed)
+    {
+        
+        setRNGSeed_0(seed);
+        
+        return;
+    }
+
+
+    //
     // C++:  void sort(Mat src, Mat& dst, int flags)
     //
 
@@ -2375,6 +2403,9 @@ public class Core {
     private static native void completeSymm_0(long mtx_nativeObj, boolean lowerToUpper);
     private static native void completeSymm_1(long mtx_nativeObj);
 
+    // C++:  void convertFp16(Mat src, Mat& dst)
+    private static native void convertFp16_0(long src_nativeObj, long dst_nativeObj);
+
     // C++:  void convertScaleAbs(Mat src, Mat& dst, double alpha = 1, double beta = 0)
     private static native void convertScaleAbs_0(long src_nativeObj, long dst_nativeObj, double alpha, double beta);
     private static native void convertScaleAbs_1(long src_nativeObj, long dst_nativeObj);
@@ -2538,6 +2569,9 @@ public class Core {
 
     // C++:  void setNumThreads(int nthreads)
     private static native void setNumThreads_0(int nthreads);
+
+    // C++:  void setRNGSeed(int seed)
+    private static native void setRNGSeed_0(int seed);
 
     // C++:  void sort(Mat src, Mat& dst, int flags)
     private static native void sort_0(long src_nativeObj, long dst_nativeObj, int flags);

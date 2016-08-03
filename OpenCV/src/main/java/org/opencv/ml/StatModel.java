@@ -78,17 +78,17 @@ public class StatModel extends Algorithm {
 
 
     //
-    // C++:  bool train(Ptr_TrainData trainData, int flags = 0)
+    // C++:  bool train(Ptr_ml_TrainData trainData, int flags = 0)
     //
 
-    // Unknown type 'Ptr_TrainData' (I), skipping the function
+    // Unknown type 'Ptr_ml_TrainData' (I), skipping the function
 
 
     //
-    // C++:  float calcError(Ptr_TrainData data, bool test, Mat& resp)
+    // C++:  float calcError(Ptr_ml_TrainData data, bool test, Mat& resp)
     //
 
-    // Unknown type 'Ptr_TrainData' (I), skipping the function
+    // Unknown type 'Ptr_ml_TrainData' (I), skipping the function
 
 
     //
