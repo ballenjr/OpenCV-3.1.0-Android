@@ -4,7 +4,6 @@
 //
 package org.opencv.ml;
 
-import java.lang.String;
 import org.opencv.core.Mat;
 import org.opencv.core.TermCriteria;
 
@@ -87,20 +86,6 @@ public class SVM extends StatModel {
     {
         
         SVM retVal = new SVM(create_0());
-        
-        return retVal;
-    }
-
-
-    //
-    // C++: static Ptr_SVM load(String filepath)
-    //
-
-    //javadoc: SVM::load(filepath)
-    public static SVM load(String filepath)
-    {
-        
-        SVM retVal = new SVM(load_0(filepath));
         
         return retVal;
     }
@@ -404,9 +389,6 @@ public class SVM extends StatModel {
 
     // C++: static Ptr_SVM create()
     private static native long create_0();
-
-    // C++: static Ptr_SVM load(String filepath)
-    private static native long load_0(String filepath);
 
     // C++:  TermCriteria getTermCriteria()
     private static native double[] getTermCriteria_0(long nativeObj);
