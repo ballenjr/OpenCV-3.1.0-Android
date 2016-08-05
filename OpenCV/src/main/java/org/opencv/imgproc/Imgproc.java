@@ -2968,7 +2968,7 @@ public class Imgproc {
     //javadoc:getTextSize(text, fontFace, fontScale, thickness, baseLine)
     public static Size getTextSize(String text, int fontFace, double fontScale, int thickness, int[] baseLine) {
         if(baseLine != null && baseLine.length != 1)
-            throw new IllegalArgumentException("'baseLine' must be 'int[1]' or 'null'.");
+            throw new java.lang.IllegalArgumentException("'baseLine' must be 'int[1]' or 'null'.");
         Size retVal = new Size(n_getTextSize(text, fontFace, fontScale, thickness, baseLine));
         return retVal;
     }
